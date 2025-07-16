@@ -7,6 +7,7 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
 <listener class-name="com.Utilities.CustomListeners"></listener>
 </listeners>
+  
   <test thread-count="5" name="Test_001_bankManagerLogin">
     <classes>
       <class name="com.TestCases.TestCase001_BankManagerLogin"/>
@@ -19,5 +20,19 @@
     </classes>
   </test> <!-- Test -->
   
+  
+   <test thread-count="5" name="Test_003_OpenAccountTest">
+    <classes>
+      <class name="com.TestCases.TestCase003_OpenAccountTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+    
+   <test thread-count="5" name="Test_004_DisplayCustTest">
+    <classes>
+      <class name="com.TestCases.TestCase004_ShowCustomers"/>
+    </classes>
+  </test> <!-- Test -->
   
 </suite> <!-- Suite -->

@@ -6,8 +6,10 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -83,6 +85,27 @@ public class BaseClass {
 		}
 	}
 
+	
+	
+	public static WebElement dropdown;
+	public void select(String locator,String value) {
+		if (locator.endsWith("_XPATH")) {
+			dropdown=driver.findElement(By.xpath(OR.getProperty(locator)));
+		}
+		if (locator.endsWith("_CSS")) {
+			dropdown=driver.findElement(By.cssSelector(OR.getProperty(locator)));
+		}
+		if (locator.endsWith("_ID")) {
+			dropdown=driver.findElement(By.id(OR.getProperty(locator)));
+		}
+		
+		
+		Select select=new Select(dropdown);
+		select.selectByVisibleText(value);
+	}
+	
+	
+	
 	public static boolean ElementisPresent(By by) {
 		try {
 			driver.findElement(by);
