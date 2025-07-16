@@ -1,5 +1,7 @@
 package com.TestCases;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Base.BaseClass;
@@ -15,6 +17,8 @@ public class TestCase001_BankManagerLogin extends BaseClass{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		Assert.assertTrue(ElementisPresent(By.xpath(OR.getProperty("add_cust_button_XPATH"))));
 	}
 
 }
