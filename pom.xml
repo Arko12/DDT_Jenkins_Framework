@@ -1,11 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.automation</groupId>
-  <artifactId>DDT_Framework_Jenkins</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
- 
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.automation</groupId>
+	<artifactId>DDT_Framework_Jenkins</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -21,9 +23,9 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.34.0</version>
 		</dependency>
-  		
-  		
-  		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+
+
+		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
 		<dependency>
 			<groupId>org.uncommons</groupId>
 			<artifactId>reportng</artifactId>
@@ -37,7 +39,7 @@
 			<artifactId>guice</artifactId>
 			<version>7.0.0</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -52,6 +54,35 @@
 			<version>5.4.0</version>
 		</dependency>
 
-  
-  </dependencies>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.3</version>
+				<configuration>
+					<suiteXMLFiles>
+						<suiteXMLFile>src/test/resources/runner/testng.xml</suiteXMLFile>
+					</suiteXMLFiles>
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+
+
+	</build>
 </project>

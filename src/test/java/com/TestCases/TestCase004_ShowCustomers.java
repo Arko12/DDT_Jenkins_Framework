@@ -12,7 +12,7 @@ public class TestCase004_ShowCustomers extends BaseClass{
 	public void testCase004_ShowCustomers() {
 		
 		if(!TestUtil.isTestRunnable("testCase004_ShowCustomer")) {
-			throw new SkipException("TEST SKIPPED FROM RUN MODE-from tTest suite level");
+			throw new SkipException("TEST SKIPPED FROM RUN MODE-from Test suite level");
 		}
 		
 		

@@ -19,7 +19,7 @@ public class TestCase003_OpenAccountTest extends BaseClass{
 	public void testCase003_OpenAccountTest(Hashtable<String,String> data) {
 		
 		if(!TestUtil.isTestRunnable("testCase003_OpenAccountTest")) {
-			throw new SkipException("TEST SKIPPED FROM RUN MODE-from tTest suite level");
+			throw new SkipException("TEST SKIPPED FROM RUN MODE-from Test suite level");
 		}
 		
 		

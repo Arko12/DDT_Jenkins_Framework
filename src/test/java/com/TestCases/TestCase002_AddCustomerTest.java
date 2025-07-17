@@ -20,7 +20,7 @@ public class TestCase002_AddCustomerTest extends BaseClass{
 	public void testCase002_AddCustomerTest(Hashtable<String,String> data) {
 		
 		if(!TestUtil.isTestRunnable("testCase002_AddCustomerTest")) {
-			throw new SkipException("TEST SKIPPED FROM RUN MODE-from tTest suite level");
+			throw new SkipException("TEST SKIPPED FROM RUN MODE-from Test suite level");
 		}
 		
 	
