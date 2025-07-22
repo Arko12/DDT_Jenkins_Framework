@@ -21,4 +21,16 @@
       <class name="com.TestCases.TC002_AddCustomer"/>
     </classes>
   </test> <!-- Test -->
+  
+   <test thread-count="5" name="Test_003_OpenAccount">
+    <classes>
+      <class name="com.TestCases.TC003_OpenAccount"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test thread-count="5" name="Test_004_CustomerData">
+    <classes>
+      <class name="com.TestCases.TC004_Customers"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

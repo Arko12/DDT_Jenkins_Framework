@@ -6,11 +6,15 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.support.ui.Select;
+
+import com.Util.ExcelReader;
 
 public class BaseClass {
 	
@@ -19,6 +23,7 @@ public class BaseClass {
 	public static Properties OR=new Properties();
 	public static WebDriver driver;
 	public static WebDriverWait wait;
+	public static ExcelReader excel=new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\resources\\excel\\TestData.xlsx");
 	
 	
 	@BeforeSuite
@@ -53,6 +58,14 @@ public class BaseClass {
 		if(locator.endsWith("_XPATH")) {
 			driver.findElement(By.xpath(OR.getProperty(locator))).click();
 		}
+		
+		if(locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+		}
+		
+		if(locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).click();
+		}
 	}
 	
 	
@@ -60,9 +73,44 @@ public class BaseClass {
 		if(locator.endsWith("_XPATH")) {
 			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
 		}
+		
+		if(locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
+		}
+		
+		if(locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
+		}
+	}
+	
+	public static boolean isElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	
 	
+	public static WebElement dropdown;
+	public static void Select(String locator,String value) {
+		
+		if(locator.endsWith("_XPATH")) {
+			dropdown=driver.findElement(By.xpath(OR.getProperty(locator)));
+		}
+		
+		if(locator.endsWith("_CSS")) {
+			dropdown=driver.findElement(By.cssSelector(OR.getProperty(locator)));
+		}
+		
+		if(locator.endsWith("_ID")) {
+			dropdown=driver.findElement(By.id(OR.getProperty(locator)));
+		}
+		
+		Select select=new Select(dropdown);
+		select.selectByVisibleText(value);
+	}
 	
 	@AfterSuite
 	public static void teardown() {
