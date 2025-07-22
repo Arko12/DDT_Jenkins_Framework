@@ -15,4 +15,10 @@
       <class name="com.TestCases.TC001_BankManagerLogin"/>
     </classes>
   </test> <!-- Test -->
+  
+    <test thread-count="5" name="Test_002_Addcustomer">
+    <classes>
+      <class name="com.TestCases.TC002_AddCustomer"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
