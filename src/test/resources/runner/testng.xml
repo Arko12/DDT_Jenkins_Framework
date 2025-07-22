@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite_DDT">
+
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+<listener class-name="com.Util.CustomListeners"></listener>
+</listeners>
+
+
+  <test thread-count="5" name="Test_001_BankManagerLogin">
+    <classes>
+      <class name="com.TestCases.TC001_BankManagerLogin"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
