@@ -9,6 +9,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.Base.BaseClass;
+import com.Util.Log;
 import com.Util.TestUtil;
 
 public class TC003_OpenAccount extends BaseClass{
@@ -49,5 +50,7 @@ public class TC003_OpenAccount extends BaseClass{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		Log.info("TC003 executed");
 	}
 }

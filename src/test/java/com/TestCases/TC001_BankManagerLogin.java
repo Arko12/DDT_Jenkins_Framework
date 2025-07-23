@@ -6,6 +6,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.Base.BaseClass;
+import com.Util.Log;
 import com.Util.TestUtil;
 
 public class TC001_BankManagerLogin extends BaseClass{
@@ -27,5 +28,6 @@ public class TC001_BankManagerLogin extends BaseClass{
 		}
 		
 		Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("add_cust_button_XPATH"))));
+		Log.info("TC001 executed");
 	}
 }

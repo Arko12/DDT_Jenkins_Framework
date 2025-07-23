@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.Base.BaseClass;
+import com.Util.Log;
 import com.Util.TestUtil;
 
 public class TC002_AddCustomer extends BaseClass {
@@ -49,6 +50,8 @@ public class TC002_AddCustomer extends BaseClass {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		Log.info("TC002 executed");
 	}
 
 	

@@ -4,6 +4,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.Base.BaseClass;
+import com.Util.Log;
 import com.Util.TestUtil;
 
 public class TC004_Customers extends BaseClass{
@@ -23,6 +24,8 @@ public class TC004_Customers extends BaseClass{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		Log.info("TC004 executed");
 	}
 
 }
